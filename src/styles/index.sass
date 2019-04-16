@@ -1,0 +1,106 @@
+@import '_variables.sass'
+@import '_spinner.sass'
+@import '_navigation.sass'
+
+body
+  font-size: 14px
+  color: #000
+  margin: 0
+  padding: 0
+  font-family: 'Montserrat', sans-serif
+body.preloader 
+  #main-preloader
+    display: flex
+
+#main-preloader.hidden 
+  opacity: 0
+#main-preloader
+  position: fixed
+  top: 0
+  left: 0 
+  width: 100vw 
+  height: 100%
+  background-color: #fff 
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 10000
+  display: none
+  transition: opacity 0.1s
+  .logo.shown 
+    opacity: 1
+  .logo 
+    width: 48px 
+    height: 48px
+    border-top: 1px solid #131313
+    border-bottom: 1px solid #131313
+    position: absolute
+    top: calc(50% - 24px)
+    left: calc(50% - 24px)
+    transform: rotate(45deg)
+    opacity: 0
+  .logo:after
+    content: ''
+    position: absolute
+    top: 12%
+    left: 12%
+    width: 76% 
+    height: 76%
+    background-color: #131313
+  .percent
+    position: relative
+    color: #fff
+    z-index: 110
+    font-size: 11px
+  .progressbar
+    position: absolute
+    left: 0
+    bottom: 0
+    height: 5px
+    width: 0
+    background-color: #131313
+    transition: width 300ms
+
+/*
+ * Sections
+ */
+
+body.fp-viewing-1,
+body.fp-viewing-2
+  background-color: rgb(19, 19, 19)
+
+.fp-enabled
+  .section 
+    opacity: 1
+.section 
+  opacity: 0
+  overflow: hidden
+
+.section-shadow:before,
+.section-shadow:after
+  content: ''
+  display: block 
+  position: absolute
+  width: 300px 
+  height: 100%
+  top: 0
+  z-index: 100
+  pointer-events: none
+.section-shadow:before
+  left: 0 
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)
+.section-shadow.shadow-white:before
+  background: url('./../img/shadow-white-left.png') left repeat-y
+.section-shadow:after
+  right: 0
+  background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(19,19,19,0) 100%)
+.section-shadow.shadow-white:after
+  background: url('./../img/shadow-white-right.png') left repeat-y 
+
+@import '_section-home.sass'
+@import '_section-intro.sass'
+@import '_section-quotes.sass'
+@import '_section-voice.sass'
+@import '_section-gallery.sass'
+@import '_section-timeline.sass'
+@import '_section-farewell-letter.sass'

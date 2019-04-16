@@ -1,0 +1,118 @@
+.fp-enabled #section-timeline .content
+  opacity: 1
+.fp-viewing-5 
+  #fp-nav ul li 
+    .fp-tooltip.fp-right
+      color: #000
+    a.active
+      border: 1px solid #000
+      span 
+        background-color: #000
+
+#section-timeline
+  .nav 
+    position: absolute
+    left: 0
+    top: 40%
+    margin-top: -168px
+    z-index: 100
+    .year 
+      padding-left: 82px
+      font-size: 20px
+      font-weight: 500
+      letter-spacing: 1px
+      margin-bottom: 24px
+      cursor: pointer
+      position: relative
+    .year:before
+      content: ''
+      display: block 
+      position absolute
+      width: 70px
+      position: absolute
+      height: 1px
+      left: 3px
+      top: 12px
+    .year.active:before
+      background-color: #7c7c7c
+  .content
+    position: relative
+    opacity: 0
+    padding-left: 280px
+    .flickity-viewport
+      overflow: visible
+    .carousel-cell
+      width: 480px
+      height: 50vh
+      margin-right: 20px
+      .img 
+        line-height: 0
+        margin-bottom: 37px
+        img 
+          height: 293px
+      .date 
+        font-size: 20px
+        font-weight: 500
+        color: #aeaeae
+        letter-spacing: 0.5px
+        margin-bottom: 25px
+        border-top: 1px solid #7c7c7c
+        span 
+          position: relative
+          background-color: rgb(245, 245, 245)
+          top: -13px
+          padding: 0 20px 0 0
+      .title 
+        font-family: "Playfair Display", serif
+        font-size: 19px
+        letter-spacing: 0.9px
+        margin-bottom: 16px
+        width: 60%
+      .desc 
+        font-family: "Playfair Display", serif
+        letter-spacing: 1.2px
+        width: 60%
+@media #{$normal-screen-1400}
+  #section-timeline:before,
+  #section-timeline:after
+    width: 260px
+    background-size: contain!important
+  #section-timeline
+    .nav 
+      margin-top: -111px
+      .year 
+        padding-left: 58px
+        font-size: 14px
+        margin-bottom: 16px
+      .year:before
+        width: 50px
+        left: 3px
+        top: 9px
+    .content
+      padding-left: 200px
+      .carousel-cell
+        width: 330px
+        height: 60vh
+        .img 
+          margin-bottom: 30px
+          img 
+            height: 204px
+        .date 
+          font-size: 14px
+          margin-bottom: 11px
+        .title 
+          font-size: 15px
+          margin-bottom: 25px
+        .desc 
+          font-size: 11px
+          width: 70%
+
+  @media #{$normal-screen-600}
+    #section-timeline:before,
+    #section-timeline:after 
+      display: none
+    #section-timeline
+      .content
+        padding-left: 68px
+      .nav 
+        display: none

@@ -1,0 +1,100 @@
+// Section Gallery
+.fp-enabled #section-gallery .swiper-container
+  opacity: 1
+
+#section-gallery
+  .swiper-container
+    width: 100%
+    padding-top: 0
+    padding-bottom: 50px
+    opacity: 0
+    overflow: visible
+  .swiper-slide.swiper-slide-active
+    .counter,
+    .year, 
+    .desc 
+      opacity: 1
+  .swiper-slide
+    background-position: center
+    background-size: contain
+    background-repeat: no-repeat
+    width: 500px!important
+    height: 500px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: #fff
+    .slide-wrapper
+      position: relative
+    .counter
+      opacity: 0
+      transition: opacity 0.3s
+      font-size: 18px 
+      text-align: center
+      position: relative
+      z-index: 1
+      margin-bottom: 10px
+      .current 
+        font-size: 28px
+    img
+      height: 550px
+      transition: filter 0.3s
+      filter: brightness(0.4)
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.8)
+      background-color: #131313
+    img.horizontal
+      height: 450px
+    &.swiper-slide-prev img, &.swiper-slide-next img
+      filter: brightness(0.7)
+    &.swiper-slide-active img
+      filter: brightness(1)
+    .year, 
+    .desc 
+      position: absolute
+      left: 0
+      opacity: 0
+      transition: opacity 0.3s
+      font-family: 'Playfair Display', serif
+    .year
+      bottom: -50px
+      font-size: 28px
+    .desc 
+      bottom: -162px
+      height: 100px
+      font-size: 18px
+      line-height: 127%
+      letter-spacing: 0.5px
+
+  @media #{$normal-screen-1400}
+    .swiper-container
+      padding-top: 60px
+    .swiper-slide
+      width: 400px!important
+      height: 400px
+      .counter
+        font-size: 13px
+        .current
+          font-size: 21px
+      img 
+        height: 430px
+      img.horizontal
+        height: 430px
+      .year
+        font-size: 17px
+        bottom: -27px 
+      .desc
+        font-size: 10px
+        width: 70%
+        bottom: -135px
+        line-height: 141%
+
+  @media #{$normal-screen-600} 
+    .swiper-slide 
+      width: 80vw!important
+      height: 60vh
+      img
+        height: auto
+        max-width: 80vw
+        max-height: 60vh
+      img.horizontal
+        height: auto

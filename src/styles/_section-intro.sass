@@ -1,0 +1,38 @@
+@import '_variables.sass'
+
+// Section Intro
+.fp-enabled
+  #section-intro
+    .content 
+      opacity: 1
+
+body.en 
+  #section-intro
+    .line-10
+      display: none
+
+#section-intro
+  color: #fff 
+  font-family: 'Playfair Display', serif
+  text-align: center
+  font-size: 28px
+  line-height: 172%
+  letter-spacing: 1.5px
+  .content 
+    opacity: 0
+    .description
+      max-width: 70%
+      margin: 0 auto
+  .line .letter
+    display: inline-block
+    line-height: 1em
+    opacity: 0 
+
+  @media #{$normal-screen-1400}
+    font-size: 20px
+
+  @media #{$normal-screen-768} 
+    font-size: 21px
+
+  @media #{$normal-screen-600}
+    font-size: 12px
