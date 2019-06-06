@@ -37,6 +37,18 @@
     box-sizing: border-box
     font-size: 20px
     line-height: 130%
+    color: #fff
+    .backdrop 
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      z-index: 1
+      background: rgba(0, 0, 0, 0.2)
+    .text
+      position: relative
+      z-index: 2
 
   .quote-1
     background: url('./../img/quote-1.jpg') center no-repeat
@@ -47,7 +59,13 @@
   .quote-3
     background: url('./../img/quote-3.jpg') center no-repeat
     background-size: contain
-    color: #fff
+  .quote-4
+    background: url('./../img/quote-4.jpg') center no-repeat
+    background-size: contain
+  .quote-5
+    background: url('./../img/quote-5.jpg') center no-repeat
+    background-size: contain
+
   .flickity-page-dots
     height: 8px 
     width: calc(50% - 60px)
@@ -65,7 +83,7 @@
       position: relative
       top: -3px
       opacity: 0
-      width: 33%
+      width: 20%
     .dot.is-selected
       opacity: 0
   .flickity-page-dots:before
@@ -90,12 +108,16 @@
     border-radius: 10px
     left: 0
     top: 0
-    width: calc(100% / 3)
+    width: calc(100% / 5)
     transition: all 0.35s 
   .flickity-page-dots.active-1:after
-    left: calc(100% / 3)
+    left: calc(100% / 5)
   .flickity-page-dots.active-2:after
-    left: calc(100% / 3 * 2)
+    left: calc(100% / 5 * 2)
+  .flickity-page-dots.active-3:after
+    left: calc(100% / 5 * 3)
+  .flickity-page-dots.active-4:after
+    left: calc(100% / 5 * 4)
 
   // counter 
   .counter-wrapper

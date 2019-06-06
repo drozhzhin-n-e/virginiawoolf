@@ -9,7 +9,7 @@
   <meta name="description" content="<?php echo $lang['DESCRIPTION']; ?>">
   <meta property="og:title" content="<?php echo $lang['TITLE']; ?>" />
   <meta property="og:description" content="<?php echo $lang['DESCRIPTION']; ?>" />
-  <meta property="og:image" content="http://virginiawoolf.name/img/main.jpg" />
+  <meta property="og:image" content="http://virginiawoolf.name/img/_main.jpg" />
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,700" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -23,7 +23,22 @@
   <script type="text/javascript" src="lib/p5.min.js"></script>
   <script type="text/javascript" src="lib/p5.dom.js"></script> 
   <script type="text/javascript" src="lib/p5.sound.js"></script> 
-  
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript" >
+     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+     m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+     ym(53949502, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true,
+          webvisor:true
+     });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/53949502" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
 </head>
 <body class="preloader">
   <div class="logo">
@@ -96,7 +111,10 @@
         </div>
         <div class="carousel">
           <?php foreach($quotes as $index=>$quote): ?>
-            <div class="carousel-cell quote-<?php echo $index+1; ?>"><?php echo $quote; ?></div>
+            <div class="carousel-cell quote-<?php echo $index+1; ?>">
+              <div class="text"><?php echo $quote; ?></div>
+              <div class="backdrop"></div>
+            </div>
           <?php endforeach; ?>
         </div>
         <div class="counter-wrapper counter-bottom">
