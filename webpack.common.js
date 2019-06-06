@@ -1,6 +1,8 @@
 var webpack = require("webpack");
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -23,7 +25,38 @@ module.exports = {
         jQuery: 'jquery',
             $: 'jquery',
             jquery: 'jquery'
-    })
+    }),
+    new WriteFilePlugin(),
+    new CopyPlugin([
+      {
+        from: 'src/audio',
+        to: 'audio'
+      },
+      {
+        from: 'src/img',
+        to: 'img'
+      },
+      {
+        from: 'src/languages',
+        to: 'languages'
+      },
+      {
+        from: 'src/templates',
+        to: 'templates'
+      },
+      {
+        from: 'src/video',
+        to: 'video'
+      },
+      {
+        from: 'src/index.php',
+        to: 'index.php'
+      },
+      {
+        from: 'src/language.php',
+        to: 'language.php'
+      }
+    ]),
   ],
   module: {
     rules: [
