@@ -1,6 +1,6 @@
 var webpack = require("webpack");
 const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 
@@ -20,7 +20,7 @@ module.exports = {
       TranslationModule: path.resolve(__dirname, './src/common/translation.module.js'),
       //Utils: path.resolve(__dirname, './src/common/utils.js')
     }),
-    new ExtractTextPlugin('style.css'),
+    new MiniCssExtractPlugin({ filename: 'style.css' }),
     new webpack.ProvidePlugin({
         jQuery: 'jquery',
             $: 'jquery',
@@ -62,17 +62,26 @@ module.exports = {
     rules: [
       {
         test: /\.sass$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('sass'),
+              sassOptions: { indentedSyntax: true }
+            }
+          }
+        ]
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
       },
       { 
         test: /\.(png|jpg|gif)$/,
